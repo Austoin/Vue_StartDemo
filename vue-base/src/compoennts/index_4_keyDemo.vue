@@ -6,7 +6,21 @@ export default {
 
             cnt: "content", 
 
-            color: "mr"
+            color: "mr",
+
+            res: [
+                {
+                    id: 123456,
+                    title: "啥事给",
+                    content: "因陀罗"
+                },
+
+                {
+                    id: 456789,
+                    title: "哪里痛",
+                    content: "阿修罗"
+                }
+            ],
         }
     },
 }
@@ -19,9 +33,13 @@ export default {
 
         <h2>key在v-for的应用</h2>  
 
-        <p v-for="(value, index) in name" :key="index", :class="color">{{ value }}---{{ index }}</p>  <!-- key应用索引 -->
+        <!-- key应用索引 -->
+        <p v-for="(value, index) in name" :key="index" :class="color"> {{ value }}---{{ index }} </p>  
 
         <!-- 这里看起来无变化，只是更新的时候不会就地更新重新渲染，而是通过key调换顺序减少内存消耗 -->
+
+        <!-- id是不变的，常用的key也是请求json -->
+        <p v-for="value in res" :key="value.id">{{ value.id }}---{{ value.title }}---{{ value.content }}</p>
 
     </div>
 </template>
@@ -37,9 +55,9 @@ export default {
         border: 1px solid #000;
     }
 
-    .mr {
+    .mr{
         color: blueviolet;
         font-family: 'Times New Roman', Times, serif;
-        size: 50px;
     }
+
 </style>
