@@ -8,6 +8,8 @@
   import index_7 from './compoennts/index_7.vue'
   import index_8_ArrayList from './compoennts/index_8_ArrayList.vue'
   import index_9_Compute from './compoennts/index_9_Compute.vue'
+  import index_10_Class from './compoennts/index_10_Class.vue'
+  import index_11_Style from './compoennts/index_11_Style.vue'
 
 </script>
 
@@ -30,5 +32,9 @@
   <index_8_ArrayList />
 
   <index_9_Compute />
+
+  <index_10_Class />
+
+  <index_11_Style />
 
 </template>
