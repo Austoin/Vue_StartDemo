@@ -23,7 +23,7 @@ export default {
 
     <p v-html="raw"></p>
 
-    <button v-bind="boID">BUtton</button>
+    <button v-bind="boID">Button</button>
   </div>
 </template>
 

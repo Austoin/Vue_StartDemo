@@ -10,6 +10,8 @@
   import index_9_Compute from './compoennts/index_9_Compute.vue'
   import index_10_Class from './compoennts/index_10_Class.vue'
   import index_11_Style from './compoennts/index_11_Style.vue'
+  import index_12_Watch from './compoennts/index_12_Watch.vue'
+  import index_13_Model from './compoennts/index_13_Model.vue'
 
 </script>
 
@@ -36,5 +38,9 @@
   <index_10_Class />
 
   <index_11_Style />
+
+  <index_12_Watch />
+
+  <index_13_Model />
 
 </template>
