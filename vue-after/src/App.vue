@@ -6,8 +6,11 @@
     // import index_5_Main from './compontents/index_5_Main.vue';
     // import index_6_ComA from './compontents/index_6_ComA.vue';
     // import Index_7_Attributes from './compontents/index_7_Attributes.vue';
-    import Index_8_Slots_1 from './compontents/index_8_Slots_1.vue';
-    import Index_8_Slots_2 from './compontents/index_8_Slots_2.vue';
+    // import Index_8_Slots_1 from './compontents/index_8_Slots_1.vue';
+    // import Index_8_Slots_2 from './compontents/index_8_Slots_2.vue';
+    import Index_9_User from './compontents/index_9_User.vue';
+    import index_10_ComponentA from './compontents/index_10_ComponentA.vue';
+    import index_10_ComponentB from './compontents/index_10_ComponentB.vue';
  
     export default {
         data(){
@@ -17,11 +20,21 @@
 
                 currShow:"JOJO is man.",
 
+                tabComponten: 'index_10_ComponentA',
+
             }
         },
         components:{
-            Index_8_Slots_1,
-            Index_8_Slots_2,
+            // Index_8_Slots_1,
+            // Index_8_Slots_2,
+            Index_9_User,
+            index_10_ComponentA,
+            index_10_ComponentB,
+        },
+        methods:{
+            tabChange(){
+                this.tabComponten = this.tabComponten == 'index_10_ComponentA' ? 'index_10_ComponentB' : 'index_10_ComponentA'
+            },
         }
     }
 
@@ -44,7 +57,7 @@
     <index_4_Compont />
     <index_5_Main />
     <index_6_ComA />
-    <Index_7_Attributes class="component"/> -->
+    <Index_7_Attributes class="component"/>
 
     <Index_8_Slots_1>
         <template #title>{{ title }}</template>
@@ -59,7 +72,24 @@
         <template #main="slotProps">
             <h3>{{ slotProps.msg }}</h3>
         </template>
-    </Index_8_Slots_2>
+    </Index_8_Slots_2> -->
+
+    <Index_9_User></Index_9_User>
+
+    <div class="content">
+        <component :is="tabComponten"></component>
+         <button @click="tabChange">切换</button>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+        .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+        justify-content: center;
+        
+        height: 50vh; 
+        border: 1px solid #000;
+    }
+</style>
